@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="When Is Garbageh">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Template function for setting a script root. On wrapper page at top so it's always avaliable-->
+        <script type=text/javascript>
+          $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+          //console.log(SCRIPT_ROOT);
+        </script>
+        <!-- favicon and apple touch presets -->
+        <!-- AllTheFavIcons.com standard favicon_64.png -->
+        <link rel="icon" type="image/png" href="{{url_for('static', filename='img/favicons/favicon_64.png')}}" />
+        <!-- AllTheFavIcons.com favicon_57.png for iPhone -->
+        <link rel="apple-touch-icon" type="image/png" href="{{url_for('static', filename='img/favicons/favicon_57.png')}}" />
+        <!-- AllTheFavIcons.com favicon_114.png for Retina iPhone -->
+        <link rel="apple-touch-icon" type="image/png" href="{{url_for('static', filename='img/favicons/favicon_114.png" sizes="114x114')}}" />
+        <!-- AllTheFavIcons.com favicon_72.png for iPad -->
+        <link rel="apple-touch-icon" type="image/png" href="{{url_for('static', filename='img/favicons/favicon_72.png" sizes="72x72')}}" />
+        <!-- AllTheFavIcons.com favicon_144.png for Retina iPad -->
+        <link rel="apple-touch-icon" type="image/png" href="{{url_for('static', filename='img/favicons/favicon_144.png" sizes="144x144')}}" />
+        <!-- AllTheFavIcons.com multi resolution favicon.ico for IE -->
+        <!--<link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.ico')}}" />-->
+
+        <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/font-awesome.css')}}">
+
+        <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap-responsive.css')}}">
+
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+
+        <script src="{{url_for('static', filename='js/vendor/modernizr-2.6.2.min.js')}}"></script>
+        <style>
+              html,
+              body {
+                height: 100%;
+                /* The html and body elements cannot have any padding or margin. */
+              }
+
+              /* Wrapper for page content to push down footer */
+              #wrap {
+                min-height: 100%;
+                height: auto !important;
+                height: 100%;
+                /* Negative indent footer by it's height */
+                margin: 0 auto -40px;
+              }
+
+              /* Set the fixed height of the footer here */
+              #push,
+              #footer {
+                height: 40px;
+              }
+
+              #footer {
+                background-color: #1570A6;
+              }
+
+              /* Lastly, apply responsive CSS fixes as necessary */
+              @media (max-width: 767px) {
+                #footer {
+                  margin-left: -20px;
+                  margin-right: -20px;
+                  padding-left: 20px;
+                  padding-right: 20px;
+                }
+              }
+
+              #inner-footer{
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+              }
+
+            .credit {
+                margin-left: 10px;
+                margin-right: 10px;
+                padding-top: 5px;
+                color: white;
+            }
+        </style>
+
+        {% block page_header %}{% endblock %}
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <div class="alert alert-error">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</div>
+        <![endif]-->
+        <!-- Add your site or application content here -->
+        {% block beforeContent %}{% endblock %}
+
+        {% block content %}{% endblock %}
+
+        {% block footer %}
+        <div id="footer">
+            <div class="container" id="inner-footer">
+                <p class="credit">Made at 1st PEI Hackathon #PEIHacks</p>
+            </div>
+        </div>
+        {% endblock %}
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write("<script src=\"{{url_for('static', filename='js/vendor/jquery-1.8.2.min.js')}}\"><\/script>")</script>
+        <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+        <script src="{{url_for('static', filename='js/plugins.js')}}"></script>
+        <script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+        {%block page_footer%}
+        {%endblock%}
+    </body>
+</html>

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block page_header%}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/construction/construction-main.css')}}">
+{%endblock%}
+
+{% block title %}Under Construction by KrisGee{% endblock %}
+
+{% block content %}
+<div id="wrap" class="container">
+    <div class="space1">
+    </div>
+        <div class="row-fluid">
+                <img class="centre-block" src="{{url_for('static',filename='img/logo/favicon_114.png')}}">
+                <hr>
+        </div>
+        <div class="internal-white">
+            <div class="well span9 offset1">
+                <div class="row-fluid">
+                    <div class="centre-block">
+                        <h2>Under Construction</h2>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="centre-block">
+                         <p class="muted">Estimated Time till Completion</p>
+                        <noscript>
+                            <!--><h1>{{local_time}}</h1><!-->
+                            When it's done.
+                        </noscript>
+                        <div id="timeblock">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <div id="push"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    <div id="footer">
+        <div class="container1" id="inner-footer">
+            <p class="credit">Under Construction by <a href="http://www.krisgee.com">Kristopher Gay</a></p>
+        </div>
+    </div>
+{% endblock %}
+
+{%block page_footer%}
+<script type="text/javascript" src="{{url_for('static', filename='js/moment.min.js')}}"></script>
+
+<script type="text/javascript">
+    var estimate_end = {{estimated_end}};
+    var edc = '{{edc}}';
+    edc = moment(edc);
+
+    var duration = moment.duration({seconds: estimate_end});
+    var humanized_time = moment.duration({seconds: estimate_end}).humanize();
+
+    //$("#timeblock").html("<h1>About "+humanized_time+"<h1>");
+    //$("#timeblock").html("<h1>About "+duration.months()+" month "+duration.days()+" days and "+duration.hours()+" hours<h1>");
+    $("#timeblock").html("<h1>When it's done<h1>");
+    console.log(moment.duration({seconds: estimate_end}).humanize());
+</script>
+{%endblock%}

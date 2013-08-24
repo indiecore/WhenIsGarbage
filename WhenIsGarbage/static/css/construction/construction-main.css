@@ -1,0 +1,72 @@
+.centre-block{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+.container{
+	background-color: white;
+}
+
+a, a:visited, a:hover{
+	font-size: 15px;
+	color: white;
+	font-weight: 400;
+	display: inline-block
+}
+
+a:hover{
+	font-size: 15px;
+	color: white;
+	font-weight: 400;
+	display: inline-block
+}
+
+.space12 {
+  height: 940px;
+}
+
+.space1 {
+  height: 860px;
+}
+
+.space10 {
+  height: 780px;
+}
+
+.space9 {
+  height: 700px;
+}
+
+.space8 {
+  height: 620px;
+}
+
+.space7 {
+  height: 540px;
+}
+
+.space6 {
+  height: 460px;
+}
+
+.space5 {
+  height: 380px;
+}
+
+.space4 {
+  height: 300px;
+}
+
+.space3 {
+  height: 220px;
+}
+
+.space2 {
+  height: 140px;
+}
+
+.space1 {
+  height: 60px;
+}
