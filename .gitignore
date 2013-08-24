@@ -33,3 +33,8 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+credentials.php
+cron/test-twilio.php
+cron/test-twitter.php
+
