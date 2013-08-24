@@ -104,7 +104,18 @@ $town = (isset($_POST['town']) ? $_POST['town'] : '');
 $twitter = (isset($_POST['twitter']) ? $_POST['twitter'] : '');
 $sms = (isset($_POST['sms']) ? $_POST['sms'] : '');
 
-$output = '<div class="content">';
+$output = '
+<style>
+.row {
+	margin: 5px;
+}
+.cell {
+	display: inline-block;
+	width: 200px;
+}
+</style>
+';
+$output .= '<div class="content">';
 $output .='<form action="edit.php" method="POST">';
 $output .='<div class="row">';
 $output .='<div class="cell">Username</div>';
