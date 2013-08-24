@@ -5,7 +5,8 @@ require_once(__DIR__ . '/../credentials.php');
 
 $db_link = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 $now = new DateTime();
-$today_string = $now->format('Y-m-d');
+// $today_string = $now->format('Y-m-d');
+$today_string = $now->format('F j, Y');
 
 /*
  * Who do we need to notify?
