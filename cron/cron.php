@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/twilio-php/Services/Twilio.php';
 require __DIR__ . '/twitter-api/TwitterAPIExchange.php';
-require_once(__DIR__ . '/credentials.php');
+require_once(__DIR__ . '/../credentials.php');
 
 $db_link = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 $now = new DateTime();

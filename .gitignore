@@ -34,7 +34,7 @@ nosetests.xml
 .project
 .pydevproject
 
-cron/credentials.php
+credentials.php
 cron/test-twilio.php
 cron/test-twitter.php
 
