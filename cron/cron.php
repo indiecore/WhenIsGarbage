@@ -25,7 +25,8 @@ $query = "SELECT email, twitter, sms,
 
 $db_result = $db_link->query($query);
 
-while ($db_row = $db_link->fetchAssoc()) {
+$db_result = $db_link->query($query);
+while ($db_row = $db_result->fetch_assoc()) {
 	$message = 'Hey ' . $db_row['email'] . '! It\'s time to put our your ';
 	if ($db_row['next_bluebag'] == $today_string) {
 		$message .= 'blue bags';
