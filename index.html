@@ -4,10 +4,29 @@
 <html lang="en">
 <head>
     <title><!-- When Is Garbage --></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+<link href="jumbotron-narrow.css" rel="stylesheet">
+<!-- Latest compiled and minified JavaScript -->
+<script src="//code.jquery.com/jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body class="container">
+ <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="#" onclick="location.href='login.html'">Login</a></li>
+        </ul>
+        <h3 class="text-muted">WhensTheGarbage</h3>
+      </div>
+      
     <!-- Insert your content here -->
+    <div class="jumbotron">
 <h2>WHEN IS MYGARBAGE PICKUP?</h2>
 <p>Have you ever wondered when your garbage pickup is but didn't have a schedule on your fridge?</p>
 <p>Have you ever missed the garbage pickup and have to wait another two weeks?</p>
@@ -16,12 +35,9 @@
     
 <h2>Simply signup for our handy garbage day reminder service!</h2>
 
-<button type="button" onclick="location.href='edit.php?new=1'">
+<button type="button" onclick="location.href='edit.php?new=1'" class="btn btn-lg btn-success">
 Sign Me Up!</button>
-
-<h3>Already have an Account?</h3>
-<button type="button" onclick="location.href='login.html'">
-Login to Existing Account</button>
+</div>
     
 </body>
 </html>
