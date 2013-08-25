@@ -104,12 +104,12 @@ $town = (isset($_POST['town']) ? $_POST['town'] : '');
 $twitter = (isset($_POST['twitter']) ? $_POST['twitter'] : '');
 $sms = (isset($_POST['sms']) ? $_POST['sms'] : '');
 
-$output = '<div class="content">';
-$output .='<form action="edit.php" method="POST">';
+$output = '<div class="container">';
+$output .='<form class="form-signin" action="edit.php" method="POST">';
 $output .='<div class="row">';
 $output .='<div class="cell">Username</div>';
 $output .='<div class="cell">';
-$output .='<input type="text" name="username" value="'.$username.'" />';
+$output .='<input type="text" class="form-control" name="username" value="'.$username.'" />';
 $output .='</div>';
 if ($errors['username']) {
   $output .= '<div class="error">' . $errors['username'] . '</div>';
@@ -118,7 +118,7 @@ $output .='</div>';
 $output .='<div class="row">';
 $output .='<div class="cell">Password</div>';
 $output .='<div class="cell">';
-$output .='<input type="password" name="password" value="'.$password.'" /></div>';
+$output .='<input type="password" class="form-control" name="password" value="'.$password.'" /></div>';
 if ($errors['password']) {
   $output .= '<div class="error">' . $errors['password'] . '</div>';
 }
@@ -126,7 +126,7 @@ $output .='</div>';
 $output .='<div class="row">';
 $output .='<div class="cell">Confirm Password</div>';
 $output .='<div class="cell">';
-$output .= '<input type="password" name="password2" value="'.$password2.'" /></div>';
+$output .= '<input type="password" class="form-control" name="password2" value="'.$password2.'" /></div>';
 if ($errors['password2']) {
   $output .= '<div class="error">' . $errors['password2'] . '</div>';
 }
@@ -134,7 +134,7 @@ $output .='</div>';
 $output .='<div class="row">';
 $output .='<div class="cell">Street Number</div>';
 $output .='<div class="cell">';
-$output .='<input type="text" name="street_number" value="'.$street_number.'" /></div>';
+$output .='<input type="text" class="form-control" name="street_number" value="'.$street_number.'" /></div>';
 if ($errors['street_number']) {
   $output .= '<div class="error">' . $errors['street_number'] . '</div>';
 }
@@ -142,7 +142,7 @@ $output .='</div>';
 $output .='<div class="row">';
 $output .='<div class="cell">Street Name</div>';
 $output .='<div class="cell">';
-$output .='<input type="text" name="street_name" value="'.$street_name.'"/ ></div>';
+$output .='<input type="text" class="form-control" name="street_name" value="'.$street_name.'"/ ></div>';
 if ($errors['street_name']) {
   $output .= '<div class="error">' . $errors['street_name'] . '</div>';
 }
@@ -198,6 +198,6 @@ $output .='</div>';
 
 $output .='</div>';
 $output .= '<input type="hidden" name="process">';
-$output .= '<input type="submit" value="Submit">';
+$output .= '<input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit">';
 echo $output;
 include_once 'footer.php';

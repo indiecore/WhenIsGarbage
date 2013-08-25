@@ -5,7 +5,8 @@ require_once(__DIR__ . '/../credentials.php');
 
 $db_link = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 $now = new DateTime();
-$today_string = $now->format('Y-m-d');
+// $today_string = $now->format('Y-m-d');
+$today_string = $now->format('F j, Y');
 
 /*
  * Who do we need to notify?
@@ -24,7 +25,8 @@ $query = "SELECT email, twitter, sms,
 
 $db_result = $db_link->query($query);
 
-while ($db_row = $db_link->fetchAssoc()) {
+$db_result = $db_link->query($query);
+while ($db_row = $db_result->fetch_assoc()) {
 	$message = 'Hey ' . $db_row['email'] . '! It\'s time to put our your ';
 	if ($db_row['next_bluebag'] == $today_string) {
 		$message .= 'blue bags';
